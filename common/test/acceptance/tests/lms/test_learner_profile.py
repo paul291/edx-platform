@@ -353,7 +353,7 @@ class LearnerProfilePageTest(EventsTestMixin, WebAppTest):
         Scenario: research change_initiated events should be emitted when the user changes profile fields
 
         Given that I am a registered user over 13 years of age
-        When I change my language, country, bio, or privacy settings
+        When I change my language, bio, and privacy settings
         Then appropriate changed_initiated research events should be emitted
         """
         self.authenticate_as_user(self.MY_USER)
@@ -378,16 +378,6 @@ class LearnerProfilePageTest(EventsTestMixin, WebAppTest):
             }
         })
 
-        self.my_profile_page.value_for_dropdown_field('country', 'United States')
-        expected_events.append({
-            u"user_id": int(self.my_user_id),
-            u"settings": {
-                'country': {
-                    "old": "GB",
-                    "new": "US"
-                }
-            }
-        })
         self.my_profile_page.value_for_textarea_field('bio', 'Vacationing')
         expected_events.append({
             u"user_id": int(self.my_user_id),
@@ -398,6 +388,7 @@ class LearnerProfilePageTest(EventsTestMixin, WebAppTest):
                 }
             }
         })
+
         self.my_profile_page.privacy = self.PRIVACY_PRIVATE
         expected_events.append({
             u"user_id": int(self.my_user_id),
