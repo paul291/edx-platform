@@ -148,7 +148,7 @@ define(['backbone', 'jquery', 'underscore', 'js/common_helpers/ajax_helpers', 'j
 
             if (data.oldValue && data.userID) {
                 var eventData = {};
-                eventData[data.valueAttribute] = {'old_value': data.oldValue, 'new_value': data.validValue};
+                eventData[data.valueAttribute] = {'old': data.oldValue, 'new': data.validValue};
                 expect(Logger.log).toHaveBeenCalledWith('edx.user.settings.change_initiated',
                     {'user_id': data.userID, 'settings': eventData}
                 );

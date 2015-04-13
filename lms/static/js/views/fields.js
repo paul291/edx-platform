@@ -141,7 +141,7 @@
                         else {
                             oldValue = this.model.get(key);
                         }
-                        settings[key] = {old_value: oldValue, new_value: attributes[key]};
+                        settings[key] = {old: oldValue, new: attributes[key]};
                     }
                     Logger.log(this.changeAnalyticsName, {
                         user_id: this.userID,

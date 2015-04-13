@@ -64,7 +64,7 @@ define(['backbone', 'jquery', 'underscore', 'js/common_helpers/ajax_helpers', 'j
                     'change_initiated', {
                         'user_id': 1000,
                         'settings': {
-                            'password': {'old_value': null, 'new_value': null}
+                            'password': {'old': null, 'new': null}
                         }
                     }
                 );
@@ -124,7 +124,7 @@ define(['backbone', 'jquery', 'underscore', 'js/common_helpers/ajax_helpers', 'j
                     'change_initiated', {
                         'user_id': 1000,
                         'settings': {
-                            'language': {'old_value': 'si', 'new_value': newLanguage}
+                            'language': {'old': 'si', 'new': newLanguage}
                         }
                     }
                 );

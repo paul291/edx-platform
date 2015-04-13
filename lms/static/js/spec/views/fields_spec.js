@@ -113,7 +113,7 @@ define(['backbone', 'jquery', 'underscore', 'js/common_helpers/ajax_helpers', 'j
                     'change_initiated', {
                         'user_id': 1000,
                         'settings': {
-                            'language': {'old_value': 'si', 'new_value': 'ur'}
+                            'language': {'old': 'si', 'new': 'ur'}
                         }
                     }
                 );

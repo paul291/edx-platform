@@ -372,8 +372,8 @@ class LearnerProfilePageTest(EventsTestMixin, WebAppTest):
             u"user_id": int(self.my_user_id),
             u"settings": {
                 'language_proficiencies': {
-                    "old_value": [{u'code': u'en'}],
-                    "new_value": [{u'code': u'fr'}]
+                    "old": [{u'code': u'en'}],
+                    "new": [{u'code': u'fr'}]
                 }
             }
         })
@@ -383,8 +383,8 @@ class LearnerProfilePageTest(EventsTestMixin, WebAppTest):
             u"user_id": int(self.my_user_id),
             u"settings": {
                 'country': {
-                    "old_value": "GB",
-                    "new_value": "US"
+                    "old": "GB",
+                    "new": "US"
                 }
             }
         })
@@ -393,8 +393,8 @@ class LearnerProfilePageTest(EventsTestMixin, WebAppTest):
             u"user_id": int(self.my_user_id),
             u"settings": {
                 'bio': {
-                    "old_value": "Nothing Special",
-                    "new_value": "Vacationing"
+                    "old": "Nothing Special",
+                    "new": "Vacationing"
                 }
             }
         })
@@ -403,8 +403,8 @@ class LearnerProfilePageTest(EventsTestMixin, WebAppTest):
             u"user_id": int(self.my_user_id),
             u"settings": {
                 'account_privacy': {
-                    "old_value": "all_users",
-                    "new_value": "private"
+                    "old": "all_users",
+                    "new": "private"
                 }
             }
         })

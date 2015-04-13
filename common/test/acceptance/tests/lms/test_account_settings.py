@@ -113,7 +113,7 @@ class AccountSettingsPageTest(EventsTestMixin, WebAppTest):
         expected_events.append({
             u"user_id": int(self.user_id),
             u"settings": {
-                field_id: {"old_value": initial_value, "new_value": new_invalid_value}
+                field_id: {"old": initial_value, "new": new_invalid_value}
             }
         })
 
@@ -124,7 +124,7 @@ class AccountSettingsPageTest(EventsTestMixin, WebAppTest):
             expected_events.append({
                 u"user_id": int(self.user_id),
                 u"settings": {
-                    field_id: {"old_value": initial_value, "new_value": new_value}
+                    field_id: {"old": initial_value, "new": new_value}
                 }
             })
             initial_value = new_value
@@ -160,8 +160,8 @@ class AccountSettingsPageTest(EventsTestMixin, WebAppTest):
                     u"user_id": int(self.user_id),
                     u"settings": {
                         field_id: {
-                            "old_value": initial_evented_value,
-                            "new_value": new_evented_values[index]
+                            "old": initial_evented_value,
+                            "new": new_evented_values[index]
                         }
                     }
                 })
@@ -176,9 +176,9 @@ class AccountSettingsPageTest(EventsTestMixin, WebAppTest):
         if new_evented_values:
             self.verify_browser_events("edx.user.settings.change_initiated", expected_events)
 
-    def _test_link_field(self, field_id, title, link_title, success_message):
+    def _test_password_link_field(self, field_id, title, link_title, success_message):
         """
-        Test behaviour a link field.
+        Test behaviour a password link field.
         """
         self.assertEqual(self.account_settings_page.title_for_field(field_id), title)
         self.assertEqual(self.account_settings_page.link_title_for_link_field(field_id), link_title)
@@ -190,7 +190,7 @@ class AccountSettingsPageTest(EventsTestMixin, WebAppTest):
             [{
                 u"user_id": int(self.user_id),
                 u"settings": {
-                    field_id: {"old_value": None, "new_value": None}
+                    field_id: {"old": None, "new": None}
                 }
             }]
         )
@@ -235,7 +235,7 @@ class AccountSettingsPageTest(EventsTestMixin, WebAppTest):
         """
         Test behaviour of "Password" field.
         """
-        self._test_link_field(
+        self._test_password_link_field(
             u'password',
             u'Password',
             u'Reset Password',

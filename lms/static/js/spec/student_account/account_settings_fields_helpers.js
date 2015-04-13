@@ -14,7 +14,7 @@ define(['backbone', 'jquery', 'underscore', 'js/common_helpers/ajax_helpers', 'j
             view.$(selector).click();
 
             if (event_user_id) {
-                eventData[data.valueAttribute] = {'old_value': 'connected', 'new_value': 'disconnected'};
+                eventData[data.valueAttribute] = {'old': 'connected', 'new': 'disconnected'};
                 expect(Logger.log).toHaveBeenCalledWith(
                     "edx.user.settings.change_initiated",
                     {'user_id': event_user_id, 'settings': eventData}
@@ -34,7 +34,7 @@ define(['backbone', 'jquery', 'underscore', 'js/common_helpers/ajax_helpers', 'j
             view.$(selector).click();
 
             if (event_user_id) {
-                eventData[data.valueAttribute] = {'old_value': 'disconnected', 'new_value': 'connected'};
+                eventData[data.valueAttribute] = {'old': 'disconnected', 'new': 'connected'};
                 expect(Logger.log).toHaveBeenCalledWith(
                     "edx.user.settings.change_initiated",
                     {'user_id': event_user_id, 'settings': eventData}
